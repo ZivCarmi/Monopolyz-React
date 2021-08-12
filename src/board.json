@@ -1,0 +1,275 @@
+{
+  "corners": [
+    {
+      "type": "corner",
+      "name": "GO",
+      "id": "go"
+    },
+    {
+      "type": "corner",
+      "name": "Jail",
+      "id": "jail"
+    },
+    {
+      "type": "corner",
+      "name": "Vacation",
+      "id": "vacation"
+    },
+    {
+      "type": "corner",
+      "name": "Go to Jail",
+      "id": "go-to-jail"
+    }
+  ],
+
+  "sides": [
+    [
+      {
+        "type": "property",
+        "name": "Mediter-ranean Avenue",
+        "cost": 60,
+        "color": "violet",
+        "rent": [2,10,30,90,160,250],
+        "houseCost": 50
+      },
+      {
+        "type": "chest",
+        "name": "Chest"
+      },
+      {
+        "type": "property",
+        "name": "Baltic Avenue",
+        "cost": 60,
+        "color": "violet",
+        "rent": [4,20,60,180,320,450],
+        "houseCost": 50
+      },
+      {
+        "type": "tax",
+        "name": "Income Tax",
+        "tax": 200
+      },
+      {
+        "type": "airport",
+        "name": "Reading Airport",
+        "cost": 200
+      },
+      {
+        "type": "property",
+        "name": "Oriental Avenue",
+        "cost": 100,
+        "color": "lightblue",
+        "rent": [6,30,90,270,400,550],
+        "houseCost": 50
+      },
+      {
+        "type": "chance",
+        "name":"Chance"
+      },
+      {
+        "type": "property",
+        "name": "Vermont Avenue",
+        "cost": 100,
+        "color": "lightblue",
+        "rent": [6,30,90,270,400,550],
+        "houseCost": 50
+      },
+      {
+        "type": "property",
+        "name": "Connecticut Avenue",
+        "cost": 120,
+        "color": "lightblue",
+        "rent": [8,40,100,300,450,600],
+        "houseCost": 50
+      }
+    ],
+    [
+      {
+        "type": "property",
+        "name": "St. Charles Place",
+        "cost": 140,
+        "color": "purple",
+        "rent": [10,50,150,450,625,750],
+        "houseCost": 100
+      },
+      {
+        "type": "company",
+        "name": "Electric Company",
+        "cost": 150
+      },
+      {
+        "type": "property",
+        "name": "States Avenue",
+        "cost": 140,
+        "color": "purple",
+        "rent": [10,50,150,450,625,750],
+        "houseCost": 100
+      },
+      {
+        "type": "property",
+        "name":"Virginia Avenue",
+        "cost": 160,
+        "color": "purple",
+        "rent": [12,60,180,500,700,900],
+        "houseCost": 100
+      },
+      {
+        "type": "airport",
+        "name": "Pennsylvania Airport",
+        "cost": 200
+      },
+      {
+        "type": "property",
+        "name": "St. James Place",
+        "cost": 180,
+        "color": "orange",
+        "rent": [14,70,200,550,750,950],
+        "houseCost": 100
+        },
+        {
+          "type": "chest",
+          "name": "Chest"
+        },
+        {
+          "type": "property",
+          "name": "Tennessee Avenue",
+          "cost": 180,
+          "color": "orange",
+          "rent": [14,70,200,550,750,950],
+          "houseCost": 100
+        },
+        {
+          "type": "property",
+          "name": "New York Avenue",
+          "cost": 200,
+          "color": "orange",
+          "rent": [16,80,220,600,800,1000],
+          "houseCost": 100
+        }
+      ],
+      [
+        {
+          "type": "property",
+          "name": "Kentucky Avenue",
+          "cost": 220,
+          "color": "red",
+          "rent": [18,90,250,700,875,1050],
+          "houseCost": 150
+        },
+        {
+          "type": "chance",
+          "name": "Chance"
+        },
+        {
+          "type": "property",
+          "name": "Indiana Avenue",
+          "cost": 220,
+          "color": "red",
+          "rent": [18,90,250,700,875,1050],
+          "houseCost": 150
+        },
+        {
+          "type": "property",
+          "name": "Illinois Avenue",
+          "cost": 240,
+          "color": "red",
+          "rent": [20,100,300,750,925,1100],
+          "houseCost": 150
+        },
+        {
+          "type": "airport",
+          "name": "B&O Airport",
+          "cost": 200
+        },
+        {
+          "type": "property",
+          "name": "Atlantic Avenue",
+          "cost": 260,
+          "color": "yellow",
+          "rent": [22,110,330,800,975,1150],
+          "houseCost": 150
+        },
+        {
+          "type": "property",
+          "name": "Ventnor Avenue",
+          "cost": 260,
+          "color": "yellow",
+          "rent": [22,110,330,800,975,1150],
+          "houseCost": 150
+        },
+        {
+          "type": "company",
+          "name": "Water Company",
+          "cost": 150
+        },
+        {
+          "type": "property",
+          "name": "Marvin Gardens",
+          "cost": 280,
+          "color": "yellow",
+          "rent": [22,120,360,850,1025,1200],
+          "houseCost": 150
+        }
+      ],
+      [
+        {
+          "type": "property",
+          "name": "Pacific Avenue",
+          "cost": 300,
+          "color": "green",
+          "rent": [26,130,390,900,1100,1275],
+          "houseCost": 200
+        },
+        {
+          "type": "property",
+          "name": "North Carolina Avenue",
+          "cost": 300,
+          "color": "green",
+          "rent": [26,130,390,900,1100,1275],
+          "houseCost": 200
+        },
+        {
+          "type": "chest",
+          "name": "Chest"
+        },
+        {
+          "type": "property",
+          "name": "Pennsylvania Avenue",
+          "cost": 320,
+          "color": "green",
+          "rent": [28,150,450,1000,1200,1400],
+          "houseCost": 200
+        },
+        {
+          "type": "airport",
+          "name": "Short Line",
+          "cost": 200
+        },
+        {
+          "type": "chance",
+          "name": "Chance"
+        },
+        {
+          "type": "property",
+          "name": "Park Place",
+          "cost": 350,
+          "color": "blue",
+          "rent": [35,175,500,1100,1300,1500],
+          "houseCost": 200
+        },
+        {
+          "type": "tax",
+          "name": "Luxury Tax",
+          "tax": 200
+        },
+        {
+          "type": "property",
+          "name": "Boardwalk",
+          "cost": 400,
+          "color": "blue",
+          "rent": [50,200,600,1400,1700,2000],
+          "houseCost": 200
+          }
+      ]
+  ]
+}
