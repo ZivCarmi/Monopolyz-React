@@ -1,35 +1,48 @@
 import React, { useState, useEffect } from "react";
+import PlayButton from "./Play-Button";
 
-const initialValues = { username: "", character: "" };
+const initialName = "";
+const initialCharacter = { name: "" };
+const initialErrors = { username: "", character: "" };
 
-const PlayersForm = ({ characters, submitForm, playersCount }) => {
-  const [values, setValues] = useState(initialValues);
-  const [errors, setErrors] = useState(initialValues);
+const PlayersForm = ({
+  characters,
+  submitForm,
+  playersCount,
+  startGame,
+  players,
+}) => {
+  const [username, setUsername] = useState(initialName);
+  const [character, setCharacter] = useState(initialCharacter);
+  const [errors, setErrors] = useState(initialErrors);
 
   useEffect(() => {
-    setValues(initialValues);
-    setErrors(initialValues);
+    setUsername(initialName);
+    setCharacter(initialCharacter);
+    setErrors(initialErrors);
   }, [playersCount]);
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
+  const handleUsernameChange = (e) => setUsername(e.target.value);
 
-    setValues({
-      ...values,
-      [name]: value,
+  const handleCharacterChange = (e) => {
+    setCharacter({
+      ...character,
+      name: e.target.value,
     });
   };
 
-  const handleValidation = (values) => {
+  const handleValidation = () => {
     let errors = {};
 
-    if (!values?.username?.length) {
+    if (!username?.length) {
       errors.username = "You must choose user name";
-    } else if (values?.username?.length < 2) {
+    } else if (username?.length < 2) {
       errors.username = "User name must contains at least 2 characters";
+    } else if (players.hasOwnProperty(username.toLowerCase())) {
+      errors.username = "User name is already taken";
     }
 
-    if (!values.character) {
+    if (!character.name) {
       errors.character = "You must pick a character";
     }
 
@@ -39,14 +52,14 @@ const PlayersForm = ({ characters, submitForm, playersCount }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    const errors = handleValidation(values);
+    const errors = handleValidation();
     const isValid = Object.keys(errors).length === 0;
 
     if (!isValid) {
       return setErrors(errors);
     }
 
-    submitForm(values);
+    submitForm({ username, character });
   };
 
   return (
@@ -55,12 +68,12 @@ const PlayersForm = ({ characters, submitForm, playersCount }) => {
       <form onSubmit={handleSubmit}>
         <div className="choose-name form-input">
           <label>
-            Name:
             <input
               type="text"
               name="username"
-              value={values?.username}
-              onChange={handleChange}
+              placeholder="User name"
+              value={username}
+              onChange={handleUsernameChange}
             />
             {errors.username && (
               <span className="error">{errors.username}</span>
@@ -68,18 +81,19 @@ const PlayersForm = ({ characters, submitForm, playersCount }) => {
           </label>
         </div>
         <div className="char-select">
-          {characters.map((char, index) => {
+          {Object.keys(characters).map((char, index) => {
             return (
               <div className="form-input" key={index}>
-                <label htmlFor="character" className={char}>
+                <label htmlFor={char} className={char}>
                   <input
                     type="radio"
                     name="character"
+                    id={char}
                     value={char}
-                    checked={char === values.character}
-                    onChange={handleChange}
+                    checked={char === character.name}
+                    onChange={handleCharacterChange}
                   />
-                  {char}
+                  <img src={characters[char]} alt={char} />
                 </label>
               </div>
             );
@@ -90,6 +104,7 @@ const PlayersForm = ({ characters, submitForm, playersCount }) => {
         </div>
         <button type="submit">Submit</button>
       </form>
+      {playersCount >= 2 ? <PlayButton startGame={startGame} /> : null}
     </div>
   );
 };

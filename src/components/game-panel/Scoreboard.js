@@ -10,12 +10,17 @@ const Scoreboard = ({ players }) => {
           </tr>
         </thead>
         <tbody>
-          {Object.keys(players).map((value, index) => {
+          {Object.keys(players).map((username, index) => {
             return (
               <tr className="player-row" key={index}>
-                <td className="player-username">{players[value].username}</td>
-                <td className="player-character">{players[value].character}</td>
-                <td className="player-money">{players[value].money}</td>
+                <td className="player-username">{username}</td>
+                <td className="player-character">
+                  <img
+                    src={players[username].character.img}
+                    alt={players[username].character.name}
+                  />
+                </td>
+                <td className="player-money">{players[username].money}</td>
               </tr>
             );
           })}

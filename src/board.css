@@ -5,21 +5,125 @@
 */
 
 #monopoly {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  justify-items: center;
   height: 100vh;
   background-color: var(--bg);
   position: relative;
 }
 
 .board {
+  grid-area: 1/2/2/2;
+  align-self: center;
   display: grid;
   grid-template-columns: 125px repeat(9, 80px) 125px;
   grid-template-rows: 105px repeat(9, 80px) 105px;
   border: 1px solid var(--black);
   background-color: var(--board);
 }
+
+/*
+-----------------------------------------------------
+// CENTER
+-----------------------------------------------------
+*/
+
+.center {
+  grid-column: 2 / 11;
+  grid-row: 2 / 11;
+  background-color: #51646f;
+  border: 1px solid var(--black);
+  position: relative;
+}
+
+.center .logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 0;
+  transform: translate(-50%, -50%);
+  font-size: var(--font55);
+  font-weight: var(--fw600);
+  letter-spacing: 9px;
+  color: rgba(255, 255, 255);
+  text-shadow: 0 0 15px rgb(255 255 255 / 50%), 0 0 10px rgb(255 255 255 / 50%);
+}
+
+.center-action {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+  justify-items: center;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.center-action .turn-timer {
+  max-width: 100px;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 1;
+  padding: 6px;
+  border-bottom: 1px solid var(--black);
+  border-left: 1px solid var(--black);
+  text-align: center;
+  font-size: var(--font18);
+  color: #ec633a;
+}
+
+.center-action .dices {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px;
+  border: 1px solid var(--black);
+}
+
+.center-action .dices .username-turn {
+  min-width: 250px;
+  text-align: center;
+}
+
+.center-action .dices .dices-action {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 150px;
+  width: 100%;
+  border: 2px solid var(--green);
+  border-radius: 50px;
+  margin-top: 20px;
+}
+
+.center-action .dices .roll-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: var(--fw600);
+  width: 100%;
+}
+
+.center-action .dices .roll-btn img {
+  height: 50px;
+  margin-left: 10px;
+  pointer-events: none;
+}
+
+.center-action .dices .rolled-dices {
+  height: 50px;
+  padding: 10px;
+}
+
+/*
+-----------------------------------------------------
+// CENTER - END
+-----------------------------------------------------
+*/
 
 /*
 -----------------------------------------------------
@@ -53,39 +157,14 @@
 
 /*
 -----------------------------------------------------
-// CENTER
------------------------------------------------------
-*/
-
-.center {
-  grid-column: 2 / 11;
-  grid-row: 2 / 11;
-  border: 1px solid var(--black);
-  display: grid;
-  justify-items: center;
-  align-items: center;
-}
-
-.center .logo {
-  font-size: var(--font55);
-  font-weight: var(--fw600);
-  letter-spacing: 9px;
-}
-
-/*
------------------------------------------------------
-// CENTER - END
------------------------------------------------------
-*/
-
-/*
------------------------------------------------------
 // TOP
 -----------------------------------------------------
 */
 
 .board .top {
-  grid-column: 2/11;
+  display: grid;
+  grid-template-columns: 125px 1fr;
+  grid-column: 1/11;
 }
 
 .board .top li .view-place {
@@ -110,8 +189,10 @@
 */
 
 .board .right {
+  display: grid;
+  grid-template-rows: 105px 1fr;
   grid-column: 11;
-  grid-row: 2 / 11;
+  grid-row: 1 / 11;
 }
 
 .board .right li .landing-spot {
@@ -132,8 +213,9 @@
 */
 
 .board .bottom {
-  grid-column: 2 / 11;
-  grid-row: 11;
+  display: grid;
+  grid-template-columns: 125px 1fr;
+  grid-area: 11/2 / auto/12;
   direction: rtl;
 }
 
@@ -158,8 +240,10 @@
 */
 
 .board .left {
+  display: grid;
+  grid-template-rows: 1fr 105px;
   grid-column: 1;
-  grid-row: 2 / 11;
+  grid-row: 2 / 12;
 }
 
 .board .left li:first-child {
@@ -220,18 +304,12 @@
   justify-content: center;
 }
 
-.board #jail {
-  grid-column: 11;
+.board .jail {
   grid-row: 1 / 1;
 }
 
-.board #vacation {
-  grid-column: 11;
-}
-
-.board #go-to-jail {
-  grid-column: 1;
-  grid-row: 11 / 12;
+.board .go-to-jail {
+  grid-area: 2;
 }
 
 /*
@@ -270,21 +348,59 @@
 
 /*
 -----------------------------------------------------
-// CORNERS - END
------------------------------------------------------
-*/
-
-/*
------------------------------------------------------
 // PLACE INFO
 -----------------------------------------------------
 */
 
 /*
-~~~~~~~~~~~~~~~~~~~~
+-----------------------------------------------------
 // General
-~~~~~~~~~~~~~~~~~~~~
+-----------------------------------------------------
 */
+
+.board .tile {
+  position: relative;
+}
+
+.board .players-block {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 8px;
+  justify-items: center;
+  writing-mode: initial;
+  transform: inherit;
+  padding: 5px;
+}
+
+.board .player-block {
+  background-color: var(--player-bg);
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100%;
+  border: 1px solid var(--player-bg);
+  transition: all 0.15s ease-in-out;
+}
+
+.board .player-block img {
+  height: 30px;
+}
+
+.board .row .player-block {
+  width: 30px;
+  height: 30px;
+}
+
+.board .row .player-block img {
+  height: 28px;
+}
 
 .board .row li button {
   display: flex;
@@ -299,9 +415,9 @@
 }
 
 /*
-~~~~~~~~~~~~~~~~~~~~
+-----------------------------------------------------
 // General
-~~~~~~~~~~~~~~~~~~~~
+-----------------------------------------------------
 */
 
 .board .horizontal .view-place .description {
@@ -358,20 +474,26 @@
 */
 
 .players-form {
-  position: absolute;
-  top: 50%;
-  right: 150px;
-  transform: translate(0, -50%);
+  width: 100%;
+  max-width: 300px;
+  grid-area: 1/2/2/2;
+  align-self: center;
   background-color: #dedede;
   padding: 30px;
-  max-width: 300px;
-  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+.players-form .player-num {
+  margin-bottom: 22px;
 }
 
 .players-form .choose-name input {
-  display: block;
-  margin-top: 4px;
-  border: 2px solid var(--black);
+  width: 100%;
+  padding: 7px;
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid var(--black);
 }
 
 .players-form form .error {
@@ -380,10 +502,29 @@
 }
 
 .players-form .char-select {
-  margin-top: 15px;
+  margin-top: 20px;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 10px;
+}
+
+.players-form .char-select [type="radio"] {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.players-form .char-select img {
+  height: 80px;
+  margin: auto;
+  filter: opacity(0.6);
+  cursor: pointer;
+  transition: all 0.05s ease-in-out;
+}
+
+.players-form .char-select [type="radio"]:checked + img {
+  filter: drop-shadow(2px 4px 6px black);
 }
 
 .players-form .char-select .error {
@@ -399,6 +540,39 @@
   font-weight: var(--fw600);
 }
 
+.players-form .or-start-game .or::before,
+.players-form .or-start-game .or::after {
+  content: "";
+  width: 1px;
+  height: 15px;
+  background-color: var(--black);
+}
+
+.players-form .or-start-game .or {
+  display: grid;
+  justify-items: center;
+  grid-gap: 6px;
+  margin: 15px 0px;
+  font-size: 10px;
+}
+
+.players-form .or-start-game .start-game-btn {
+  background-color: var(--green);
+  border: 2px solid transparent;
+  width: 100%;
+  padding: 15px;
+  font-size: var(--font18);
+  letter-spacing: 2px;
+  color: #fff;
+  transition: all 0.3s ease-in-out;
+}
+
+.players-form .or-start-game .start-game-btn:hover {
+  background-color: transparent;
+  color: var(--green);
+  border: 2px solid var(--green);
+}
+
 /*
 // ======================================================
 // FORM - END
@@ -407,14 +581,28 @@
 
 /*
 // ======================================================
-// SCOREBOARD
+// GAME PANEL
 // ======================================================
 */
 
-.scoreboard {
-  align-self: flex-start;
-  margin: 150px 70px 0 0;
+.game-panel {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 50px 0;
 }
+
+/*
+// ======================================================
+// GAME PANEL - END
+// ======================================================
+*/
+
+/*
+// ======================================================
+// SCOREBOARD
+// ======================================================
+*/
 
 .scoreboard table thead th,
 .scoreboard table tbody td {
@@ -434,6 +622,13 @@
 
 .scoreboard table tbody td {
   border-top: 1px solid var(--black);
+}
+
+.scoreboard table tbody td.player-character img {
+  width: 45px;
+  height: auto;
+  margin: auto;
+  object-fit: cover;
 }
 
 /*

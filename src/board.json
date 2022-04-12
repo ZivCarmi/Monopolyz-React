@@ -1,21 +1,25 @@
 {
   "corners": [
     {
+      "index": 0,
       "type": "corner",
       "name": "GO",
       "id": "go"
     },
     {
+      "index": 10,
       "type": "corner",
       "name": "Jail",
       "id": "jail"
     },
     {
+      "index": 20,
       "type": "corner",
       "name": "Vacation",
       "id": "vacation"
     },
     {
+      "index": 30,
       "type": "corner",
       "name": "Go to Jail",
       "id": "go-to-jail"
@@ -25,6 +29,7 @@
   "sides": [
     [
       {
+        "index": 1,
         "type": "property",
         "name": "Mediter-ranean Avenue",
         "cost": 60,
@@ -33,10 +38,12 @@
         "houseCost": 50
       },
       {
+        "index": 2,
         "type": "chest",
         "name": "Chest"
       },
       {
+        "index": 3,
         "type": "property",
         "name": "Baltic Avenue",
         "cost": 60,
@@ -45,16 +52,19 @@
         "houseCost": 50
       },
       {
+        "index": 4,
         "type": "tax",
         "name": "Income Tax",
         "tax": 200
       },
       {
+        "index": 5,
         "type": "airport",
         "name": "Reading Airport",
         "cost": 200
       },
       {
+        "index": 6,
         "type": "property",
         "name": "Oriental Avenue",
         "cost": 100,
@@ -63,10 +73,12 @@
         "houseCost": 50
       },
       {
+        "index": 7,
         "type": "chance",
         "name":"Chance"
       },
       {
+        "index": 8,
         "type": "property",
         "name": "Vermont Avenue",
         "cost": 100,
@@ -75,6 +87,7 @@
         "houseCost": 50
       },
       {
+        "index": 9,
         "type": "property",
         "name": "Connecticut Avenue",
         "cost": 120,
@@ -85,6 +98,7 @@
     ],
     [
       {
+        "index": 11,
         "type": "property",
         "name": "St. Charles Place",
         "cost": 140,
@@ -93,11 +107,13 @@
         "houseCost": 100
       },
       {
+        "index": 12,
         "type": "company",
         "name": "Electric Company",
         "cost": 150
       },
       {
+        "index": 13,
         "type": "property",
         "name": "States Avenue",
         "cost": 140,
@@ -106,6 +122,7 @@
         "houseCost": 100
       },
       {
+        "index": 14,
         "type": "property",
         "name":"Virginia Avenue",
         "cost": 160,
@@ -114,11 +131,13 @@
         "houseCost": 100
       },
       {
+        "index": 15,
         "type": "airport",
         "name": "Pennsylvania Airport",
         "cost": 200
       },
       {
+        "index": 16,
         "type": "property",
         "name": "St. James Place",
         "cost": 180,
@@ -127,10 +146,12 @@
         "houseCost": 100
         },
         {
+          "index": 17,
           "type": "chest",
           "name": "Chest"
         },
         {
+          "index": 18,
           "type": "property",
           "name": "Tennessee Avenue",
           "cost": 180,
@@ -139,6 +160,7 @@
           "houseCost": 100
         },
         {
+          "index": 19,
           "type": "property",
           "name": "New York Avenue",
           "cost": 200,
@@ -149,6 +171,7 @@
       ],
       [
         {
+          "index": 21,
           "type": "property",
           "name": "Kentucky Avenue",
           "cost": 220,
@@ -157,10 +180,12 @@
           "houseCost": 150
         },
         {
+          "index": 22,
           "type": "chance",
           "name": "Chance"
         },
         {
+          "index": 23,
           "type": "property",
           "name": "Indiana Avenue",
           "cost": 220,
@@ -169,6 +194,7 @@
           "houseCost": 150
         },
         {
+          "index": 24,
           "type": "property",
           "name": "Illinois Avenue",
           "cost": 240,
@@ -177,11 +203,13 @@
           "houseCost": 150
         },
         {
+          "index": 25,
           "type": "airport",
           "name": "B&O Airport",
           "cost": 200
         },
         {
+          "index": 26,
           "type": "property",
           "name": "Atlantic Avenue",
           "cost": 260,
@@ -190,6 +218,7 @@
           "houseCost": 150
         },
         {
+          "index": 27,
           "type": "property",
           "name": "Ventnor Avenue",
           "cost": 260,
@@ -198,11 +227,13 @@
           "houseCost": 150
         },
         {
+          "index": 28,
           "type": "company",
           "name": "Water Company",
           "cost": 150
         },
         {
+          "index": 29,
           "type": "property",
           "name": "Marvin Gardens",
           "cost": 280,
@@ -213,6 +244,7 @@
       ],
       [
         {
+          "index": 31,
           "type": "property",
           "name": "Pacific Avenue",
           "cost": 300,
@@ -221,6 +253,7 @@
           "houseCost": 200
         },
         {
+          "index": 32,
           "type": "property",
           "name": "North Carolina Avenue",
           "cost": 300,
@@ -229,10 +262,12 @@
           "houseCost": 200
         },
         {
+          "index": 33,
           "type": "chest",
           "name": "Chest"
         },
         {
+          "index": 34,
           "type": "property",
           "name": "Pennsylvania Avenue",
           "cost": 320,
@@ -241,15 +276,18 @@
           "houseCost": 200
         },
         {
+          "index": 35,
           "type": "airport",
           "name": "Short Line",
           "cost": 200
         },
         {
+          "index": 36,
           "type": "chance",
           "name": "Chance"
         },
         {
+          "index": 37,
           "type": "property",
           "name": "Park Place",
           "cost": 350,
@@ -258,11 +296,13 @@
           "houseCost": 200
         },
         {
+          "index": 38,
           "type": "tax",
           "name": "Luxury Tax",
           "tax": 200
         },
         {
+          "index": 39,
           "type": "property",
           "name": "Boardwalk",
           "cost": 400,

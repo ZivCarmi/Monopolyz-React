@@ -1,23 +1,45 @@
-import Center from './center/Center'
-import Side from './sides/Side'
+import ReactDOM from "react-dom";
+import { useEffect } from "react";
+import Center from "./center/Center";
+import Players from "./Players";
 
-const Board = ({gameTiles}) => {
-  const tilesStructure = [];
+const Board = ({
+  boardTiles,
+  shouldStartGame,
+  players,
+  playerTurn,
+  handlePlayerPosition,
+}) => {
+  useEffect(() => {
+    const playersBlockSelector = document.querySelector(".players-block");
 
-  const cornerClasses = ['top', 'right', 'bottom', 'left'];
+    if (shouldStartGame && !playersBlockSelector) {
+      const playersChars = [];
 
-  for (let c = 0; c < gameTiles.corners.length; c++) {
-    tilesStructure.push(<div id={gameTiles.corners[c].id} className={gameTiles.corners[c].type} key={gameTiles.corners[c].id}>{gameTiles.corners[c].name}</div>)
-    
-    tilesStructure.push(<Side sides={gameTiles.sides[c]} key={c} classes={['row', cornerClasses[c], c % 2 === 0 ? 'horizontal': 'vertical']} />);
-  }
+      Object.keys(players).map((player, key) => {
+        return playersChars.push(
+          <Players player={players[player]} key={key} />
+        );
+      });
+
+      const playersBlock = document.createElement("div");
+      playersBlock.className = "players-block";
+
+      document.getElementById(0).appendChild(playersBlock);
+
+      ReactDOM.render(playersChars, playersBlock);
+    }
+  }, [shouldStartGame, players]);
 
   return (
     <div className="board">
-      <Center />
-      {tilesStructure}
+      <Center
+        playerTurn={playerTurn}
+        handlePlayerPosition={handlePlayerPosition}
+      />
+      {boardTiles}
     </div>
-  )
-}
+  );
+};
 
 export default Board;

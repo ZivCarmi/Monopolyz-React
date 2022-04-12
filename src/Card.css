@@ -1,0 +1,73 @@
+.card {
+  max-width: 320px;
+  min-height: 400px;
+  border: 1px solid #fff;
+  background-color: rgba(255 255 255 / 92%);
+  padding: 15px;
+}
+
+.card .card-inner {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  height: 100%;
+  border: 1px solid var(--black);
+}
+
+.card .color {
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: orange;
+  border: 1px solid var(--black);
+}
+
+.card .name {
+  text-align: center;
+  font-size: var(--font16);
+}
+
+.card .card-info {
+  margin-top: 20px;
+  font-size: var(--font14);
+}
+
+.card .property-info > li:not(:first-child) {
+  border-top: 1px solid var(--black);
+  padding-top: 8px;
+  margin-top: 8px;
+}
+
+.card .property-info > li .value {
+  font-weight: var(--fw600);
+}
+
+.card .property-info .rent-list {
+  display: grid;
+  grid-gap: 6px;
+}
+
+.card .property-info .row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card .card-actions {
+  display: flex;
+  justify-content: center;
+  margin-top: auto;
+  font-size: var(--font14);
+}
+
+.card .card-actions button {
+  border: 1px solid var(--black);
+  padding: 5px 15px;
+  font-weight: var(--fw600);
+  border-radius: 3px;
+  transition: all 0.15s ease-in-out;
+}
+
+.card .card-actions button:hover {
+  background-color: hsl(0deg 0% 89%);
+}

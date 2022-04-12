@@ -264,13 +264,19 @@ legend {
 */
 
 :root {
+  --player-bg: #00000026;
   --bg: #444444;
   --black: #191515;
   --board: #b6b6b6;
   --red: red;
-  --font13: 13px;
-  --font55: 55px;
+  --green: #199419;
+  --font13: 0.813rem;
+  --font14: 0.875rem;
+  --font16: 1rem;
+  --font18: 1.125rem;
+  --font55: 3.438rem;
   --fw600: 600;
+  --fw700: 700;
 }
 
 html {
