@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import { useState, useRef } from "react";
 import dices from "../../../images/dices.png";
 import dice1 from "../../../images/dice1.jpg";
 import dice2 from "../../../images/dice2.jpg";

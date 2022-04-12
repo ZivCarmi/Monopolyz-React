@@ -1,4 +1,3 @@
-import React from "react";
 import { getTile } from "../../../Helpers";
 
 const TileOptions = ({ playerTurn }) => {

@@ -1,4 +1,3 @@
-import React from "react";
 // import { useEffect, useState } from "react";
 import { getTile } from "../../Helpers";
 import Property from "./Cards/Property";

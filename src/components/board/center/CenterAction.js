@@ -1,4 +1,3 @@
-import React from "react";
 import Dices from "./Dices";
 import TurnTimer from "./TurnTimer";
 import TileOptions from "./TileOptions";

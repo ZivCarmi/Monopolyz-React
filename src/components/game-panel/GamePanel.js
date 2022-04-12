@@ -1,4 +1,3 @@
-import React from "react";
 import Scoreboard from "./Scoreboard";
 import Card from "./Card";
 

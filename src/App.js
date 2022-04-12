@@ -165,19 +165,6 @@ const App = () => {
     handlePlayerTurn();
   };
 
-  // useEffect(() => {
-  // new turn has been started
-  // }, [isNewTurn]);
-
-  // const setNextTurn = () => {
-  //   const lastPlayerPlayed = playerTurn.username.toLowerCase();
-
-  //   const playersKeys = Object.keys(players);
-  //   const nextPlayer = playersKeys.indexOf(lastPlayerPlayed) + 1;
-
-  //   setPlayerTurn(players[playersKeys[nextPlayer]]);
-  // };
-
   return (
     <>
       {Object.keys(players).length ? (
